@@ -8,6 +8,12 @@
     gap: 3vw;
 }
 
+.menuButton a {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
 .menuButton {
     background-color: transparent;
     font-size: 18px;
@@ -17,9 +23,56 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.menuButton::after {
+    pointer-events: none;
+    content: "";
+    transition: 0.2s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--theme-c1);
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    z-index: -1;
+    transform-origin: center;
+    transition-delay: 0.2s;
+    /* transition-timing-function: cubic-bezier(0.35, -0.01, 0.18, 2); */
+}
+
+.menuButton:hover::after {
+    transform: scale(1);
+    /* transition-delay: 0.4s transform; */
+}
+
+.menuButton::before {
+    content: "";
+    pointer-events: none;
+    transition: 0.2s;
+    position: absolute;
+    box-sizing: content-box;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    border: 2px dashed var(--theme-c2);
+    border-radius: 0px;
+    opacity: 0.2;
+    transform-origin: top;
+    transform: scaleY(0);
+}
+
+.menuButton:hover::before {
+    transform: scaleY(1);
 }
 
 .menuButton a {
     color: var(--theme-c2);
     text-decoration: none;
+}
+
+.menuButton.active::after {
+    transform: scale(1);
 }

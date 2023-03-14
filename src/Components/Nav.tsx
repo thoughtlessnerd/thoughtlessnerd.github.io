@@ -6,26 +6,42 @@ const Nav: React.FC = () => {
     const menuList: menuItem[] = [
         {
             label: "Home",
-            hoverClass: "hoverMenuButton",
-            href: "https://thoughtlessnerd.github.io",
+            href: "/",
         },
         {
             label: "Projects",
+            href: "/Projects",
         },
         {
             label: "About",
+            href: "/About",
         },
         {
             label: "Blogs",
+            href: "/Blogs",
         },
         {
             label: "Contact me",
+            href: "/Contact",
         },
     ];
+
+    let activeIdx: number | undefined = undefined;
+    const address: string = document.location.href.slice(
+        document.location.origin.length
+    );
+    console.log(address);
+    for (let i: number = 0; i < menuList.length; i++) {
+        if (address == menuList[i].href) {
+            activeIdx = i;
+            break;
+        }
+    }
+
     return (
         <nav>
             <Logo nameFirst="Thought" nameSecond="less" nameThird="Nerd" />
-            <Menu list={menuList}></Menu>
+            <Menu list={menuList} activeItem={activeIdx}></Menu>
         </nav>
     );
 };

@@ -2,23 +2,13 @@ interface menuButton {
     label: string;
     onclick?: Function;
     href?: string;
-    hoverClass?: string;
+    active?: boolean;
 }
 
 const MenuButton = (props: menuButton) => {
-    const hoverClass = props.hoverClass ?? "";
+    let classNames: string = props.active ? "menuButton active" : "menuButton";
     return (
-        <button
-            className="menuButton"
-            onMouseEnter={(e) => {
-                const target = e.target as Element;
-                target.classList.add(hoverClass);
-            }}
-            onMouseLeave={(e) => {
-                const target = e.target as Element;
-                target.classList.remove(hoverClass);
-            }}
-        >
+        <button className={classNames}>
             {props.href && <a href={props.href}>{props.label}</a>}
             {!props.href && props.label}
         </button>

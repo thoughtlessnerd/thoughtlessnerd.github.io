@@ -19,6 +19,7 @@ body {
     --theme-c1: #ff3f38;
     --theme-c2: #f6f4f3;
     background-color: var(--dark-c1);
+    overflow-x: hidden;
 }
 
 code {
