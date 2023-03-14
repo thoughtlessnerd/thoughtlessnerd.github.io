@@ -26,3 +26,13 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
 }
+
+@font-face {
+    font-family: gothamBold;
+    src: url("./assets/fonts/Gotham-Font/Gotham-Bold.otf");
+}
+
+@font-face {
+    font-family: gothamLight;
+    src: url("./assets/fonts/Gotham-Font/Gotham-Light.otf");
+}

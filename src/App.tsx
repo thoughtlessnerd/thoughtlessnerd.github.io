@@ -1,11 +1,26 @@
-import React from 'react';
-import './App.css';
-import Nav from './Components/Nav';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Blogs from "./pages/Blogs";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
+import "./assets/fonts/Gotham-Font/Gotham-Bold.otf";
+import "./assets/fonts/Gotham-Font/Gotham-Light.otf";
 
-const App : React.FC = () => {
-  return (
-    <Nav></Nav>
-  );
-}
+const App: React.FC = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/About" element={<About />} />
+                <Route path="/Contact" element={<Contact />} />
+                <Route path="/Blogs" element={<Blogs />} />
+                <Route path="/Projects" element={<Projects />} />
+            </Routes>
+        </Router>
+    );
+};
 
 export default App;

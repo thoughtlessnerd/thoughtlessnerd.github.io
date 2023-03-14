@@ -10,19 +10,19 @@ const Nav: React.FC = () => {
         },
         {
             label: "Projects",
-            href: "/Projects",
+            href: "/Projects/",
         },
         {
             label: "About",
-            href: "/About",
+            href: "/About/",
         },
         {
             label: "Blogs",
-            href: "/Blogs",
+            href: "/Blogs/",
         },
         {
             label: "Contact me",
-            href: "/Contact",
+            href: "/Contact/",
         },
     ];
 
