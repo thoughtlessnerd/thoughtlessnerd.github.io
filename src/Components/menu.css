@@ -1,0 +1,25 @@
+.menu {
+    display: flex;
+    list-style-type: none;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3vw;
+}
+
+.menuButton {
+    background-color: transparent;
+    font-size: 18px;
+    border: none;
+    font-family: gothamLight;
+    color: var(--theme-c2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuButton a {
+    color: var(--theme-c2);
+    text-decoration: none;
+}

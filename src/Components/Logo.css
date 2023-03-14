@@ -1,16 +1,13 @@
-.color-main
-{
-  color: var(--theme-c2);
+.color-main {
+    color: var(--theme-c2);
 }
 
-.color-vibrance
-{
-  color: var(--theme-c1);
+.color-vibrance {
+    color: var(--theme-c1);
 }
 
-.logo
-{
-  font-family: gothamBold;
-  padding: 20px;
-  font-size: 30px;
+.logo {
+    font-family: gothamBold;
+    padding: 20px;
+    font-size: 30px;
 }
