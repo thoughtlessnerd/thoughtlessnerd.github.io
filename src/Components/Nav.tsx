@@ -32,7 +32,7 @@ const Nav: React.FC = () => {
     );
     console.log(address);
     for (let i: number = 0; i < menuList.length; i++) {
-        if (address == menuList[i].href) {
+        if (address === menuList[i].href) {
             activeIdx = i;
             break;
         }
@@ -40,7 +40,7 @@ const Nav: React.FC = () => {
 
     return (
         <nav>
-            <Logo nameFirst="Thought" nameSecond="less" nameThird="Nerd" />
+            <Logo nameFirst="Thoughtless" nameSecond="Nerd" />
             <Menu list={menuList} activeItem={activeIdx}></Menu>
         </nav>
     );

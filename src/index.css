@@ -15,9 +15,9 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    --dark-c1: #030a1c;
-    --theme-c1: #ff3f38;
-    --theme-c2: #f6f4f3;
+    --dark-c1: hsl(223, 61%, 16%);
+    --theme-c1: hsl(2, 70%, 61%);
+    --theme-c2: hsl(20, 0%, 80%);
     background-color: var(--dark-c1);
     overflow-x: hidden;
 }
