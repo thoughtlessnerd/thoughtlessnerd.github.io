@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --dark-c1: #101e42;
+  --theme-c1: #e15b56;
+  --theme-c2: #cccccc;
+  --light-c1: #3a496e;
+  background-color: var(--dark-c1);
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@font-face {
+  font-family: gothamBold;
+  src: url("../assets/fonts/Gotham-Font/Gotham-Bold.otf");
+}
+
+@font-face {
+  font-family: gothamLight;
+  src: url("../assets/fonts/Gotham-Font/Gotham-Light.otf");
+}

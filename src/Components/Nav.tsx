@@ -1,6 +1,6 @@
 import Logo from "./Logo";
 import { Menu, menuItem } from "./Menu";
-import "./Nav.css";
+import "../css/Nav.css";
 import React, { useEffect } from "react";
 
 const Nav: React.FC = () => {
@@ -41,7 +41,7 @@ const Nav: React.FC = () => {
         return i;
       }
     }
-    return undefined;
+    return 0;
   }
 
   useEffect(() => {
