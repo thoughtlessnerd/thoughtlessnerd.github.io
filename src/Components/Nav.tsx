@@ -27,23 +27,25 @@ const Nav: React.FC = () => {
     },
   ];
 
-  const [activeIdx, setActiveIdx] = React.useState<number>(0);
+  const [activeIdx, setActiveIdx] = React.useState<number | undefined>(
+    handleNavActive()
+  );
 
-  const handleNavActive = () => {
+  function handleNavActive(): number | undefined {
     const address: string = document.location.href.slice(
       document.location.origin.length
     );
     console.log(address);
     for (let i: number = 0; i < menuList.length; i++) {
-      if (address === menuList[i].href) {
-        setActiveIdx(i);
-        break;
+      if (address === menuList[i].href || address === menuList[i].href + "/") {
+        return i;
       }
     }
-  };
+    return undefined;
+  }
 
   useEffect(() => {
-    handleNavActive();
+    setActiveIdx(handleNavActive());
   }, []);
 
   return (
