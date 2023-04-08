@@ -1,6 +1,7 @@
 import Logo from "./Logo";
 import { Menu, menuItem } from "./Menu";
 import "./Nav.css";
+import React, { useEffect } from "react";
 
 const Nav: React.FC = () => {
   const menuList: menuItem[] = [
@@ -26,17 +27,24 @@ const Nav: React.FC = () => {
     },
   ];
 
-  let activeIdx: number | undefined = undefined;
-  const address: string = document.location.href.slice(
-    document.location.origin.length
-  );
-  console.log(address);
-  for (let i: number = 0; i < menuList.length; i++) {
-    if (address === menuList[i].href) {
-      activeIdx = i;
-      break;
+  const [activeIdx, setActiveIdx] = React.useState<number>(0);
+
+  const handleNavActive = () => {
+    const address: string = document.location.href.slice(
+      document.location.origin.length
+    );
+    console.log(address);
+    for (let i: number = 0; i < menuList.length; i++) {
+      if (address === menuList[i].href) {
+        setActiveIdx(i);
+        break;
+      }
     }
-  }
+  };
+
+  useEffect(() => {
+    handleNavActive();
+  }, []);
 
   return (
     <nav>
