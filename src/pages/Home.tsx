@@ -49,40 +49,59 @@ const Home: React.FC = () => {
             direction="column"
             styleType="default"
           />
-          <Repeater
-            style={{
-              position: "absolute",
-              right: "0",
-            }}
-            count={50}
-            direction="row"
-            gap={4}
-          >
+          <div className="heroDesignRight">
+            <Repeater
+              style={{
+                position: "relative",
+              }}
+              count={50}
+              direction="row"
+              gap={4}
+            >
+              <AbstractLines
+                lineWidth={3}
+                lineHeight={3}
+                lineColor={Colors.light_c1}
+                gap={3}
+                count={10}
+                direction={"column"}
+                styleType="default"
+              />
+            </Repeater>
             <AbstractLines
-              lineWidth={3}
-              lineHeight={3}
-              lineColor={Colors.light_c1}
-              gap={3}
-              count={10}
+              style={{
+                position: "absolute",
+                right: "0px",
+                transformOrigin: "center",
+                transform: `rotate(180deg) translateY(6px) translateX(-${
+                  Math.random() * 20
+                }px)`,
+              }}
+              lineWidth={(i) => Math.random() * 200 + 25}
+              lineHeight={1}
+              lineColor={Colors.theme_c1}
+              gap={3 * 10}
+              count={Math.floor(Math.random() * 2 + 1)}
               direction={"column"}
               styleType="default"
             />
-          </Repeater>
-          <AbstractLines
-            style={{
-              position: "absolute",
-              right: "0px",
-              transformOrigin: "center",
-              transform: "rotate(180deg) translateY(6px)",
-            }}
-            lineWidth={(i) => Math.random() * 300}
-            lineHeight={1}
-            lineColor={Colors.theme_c1}
-            gap={3 * 10}
-            count={Math.floor(Math.random() * 2 + 1)}
-            direction={"column"}
-            styleType="default"
-          />
+            <AbstractLines
+              style={{
+                position: "absolute",
+                left: "0px",
+                bottom: "0px",
+                transformOrigin: "center",
+                transform: `translate(-${Math.random() * 20}px, 6px)`,
+              }}
+              lineWidth={(i) => Math.random() * 200 + 25}
+              lineHeight={1}
+              lineColor={Colors.theme_c2}
+              gap={3 * 10}
+              count={Math.floor(Math.random() * 2 + 1)}
+              direction={"column"}
+              styleType="default"
+            />
+          </div>
         </Section>
       </IndexedSection>
     </>

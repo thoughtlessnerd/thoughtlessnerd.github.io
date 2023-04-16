@@ -42,3 +42,11 @@
   opacity: 0.2;
   transform: rotateZ(-40deg);
 }
+
+.heroSection .heroDesignRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  width: fit-content;
+}

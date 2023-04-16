@@ -2,6 +2,9 @@ interface RepeaterProps {
   children: React.ReactNode;
   count: number;
   direction: "row" | "column";
+  height?: number | ((index: number) => number);
+  width?: number | ((index: number) => number);
+  transfromOrigin?: string;
   gap?: number;
   size?: {
     scaleX: number | ((index: number) => number);
@@ -14,15 +17,33 @@ interface RepeaterProps {
   rotate?: number | ((index: number) => number);
   className?: string;
   style?: React.CSSProperties;
+  childStyle?: React.CSSProperties;
 }
 
 const Repeater: React.FC<RepeaterProps> = (props: RepeaterProps) => {
   let arr = [];
+  console.log(props.size?.scaleX);
   for (let i = 0; i < props.count; i++) {
     arr.push(
       <span
         style={{
-          transform: `scale(${
+          ...props.childStyle,
+          height: `${
+            typeof props.height === "function" ? props.height(i) : props.height
+          }px`,
+          width: `${
+            typeof props.width === "function" ? props.width(i) : props.width
+          }px`,
+          transformOrigin: props.transfromOrigin || "center",
+          transform: `translate(${
+            (typeof props.translate?.x === "function"
+              ? props.translate?.x(i)
+              : props.translate?.x) || 0
+          }px, ${
+            (typeof props.translate?.y === "function"
+              ? props.translate?.y(i)
+              : props.translate?.y) || 0
+          }px) scale(${
             (typeof props.size?.scaleX === "function"
               ? props.size?.scaleX(i)
               : props.size?.scaleX) || 1
