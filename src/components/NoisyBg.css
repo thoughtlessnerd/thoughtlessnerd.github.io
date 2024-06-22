@@ -1,0 +1,27 @@
+.bg-radial-grad {
+  background: radial-gradient(#f5bf7a 10%, #ff5126a9 20%, #e9222200 70%);
+}
+
+.noise {
+  /* background-image: url('./assets/nnnoise.svg'); */
+  background-image: url("../assets/noisy-300x300.png");
+  background-size: 300px 300px;
+  animation: noise-anim 2s steps(4) infinite;
+  scale: 1.2;
+}
+
+@keyframes noise-anim {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-5%, -5%);
+  }
+  50% {
+    transform: translate(5%, 5%);
+  }
+  75% {
+    transform: translate(-5%, 5%);
+  }
+}
