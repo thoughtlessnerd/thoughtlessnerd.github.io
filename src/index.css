@@ -24,3 +24,13 @@
 .styled-font {
   font-family: "Lobster", cursive;
 }
+
+.corner-border {
+  --s: 20px; /* the size on the corner */
+
+  padding: 20px; /* the gap between the border and image */
+  border: 1px solid #ffe6dd; /* the thickness and color */
+  -webkit-mask: conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0 /
+      calc(100% - var(--s)) calc(100% - var(--s)),
+    linear-gradient(#000 0 0) content-box;
+}
